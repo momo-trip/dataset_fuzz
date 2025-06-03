@@ -1,0 +1,1 @@
+i386_disasm.o x86_64_disasm.o bpf_disasm.o riscv_disasm.o

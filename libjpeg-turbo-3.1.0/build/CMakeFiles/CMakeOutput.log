@@ -1,0 +1,341 @@
+The system is: Linux - 6.8.0-1029-azure - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/afl-clang-fast 
+Build flags: -fsanitize=address;-g;-O1
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is Clang, found in "/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/3.22.1/CompilerIdC/a.out"
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_66675/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_66675.dir/build.make CMakeFiles/cmTC_66675.dir/build
+gmake[1]: Entering directory '/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_66675.dir/CMakeCCompilerABI.c.o
+/usr/bin/afl-clang-fast   -fsanitize=address -g -O1    -v -MD -MT CMakeFiles/cmTC_66675.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_66675.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_66675.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c
+Ubuntu clang version 13.0.1-2ubuntu2.2
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/lib/llvm-13/bin
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11
+Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ (in-process)
+ "/usr/lib/llvm-13/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model static -mframe-pointer=none -fmath-errno -fno-rounding-math -mconstructor-aliases -munwind-tables -target-cpu x86-64 -tune-cpu generic -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -v -fcoverage-compilation-dir=/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp -resource-dir /usr/lib/llvm-13/lib/clang/13.0.1 -dependency-file CMakeFiles/cmTC_66675.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_66675.dir/CMakeCCompilerABI.c.o -sys-header-deps -D __AFL_HAVE_MANUAL_CONTROL=1 -D __AFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1 -D "__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern unsigned int *__afl_fuzz_len;extern unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt;" -D "__AFL_COVERAGE()=int __afl_selective_coverage = 1;void __afl_coverage_discard();void __afl_coverage_skip();void __afl_coverage_on();void __afl_coverage_off();" -D "__AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1;" -D __AFL_COVERAGE_ON()=__afl_coverage_on() -D __AFL_COVERAGE_OFF()=__afl_coverage_off() -D __AFL_COVERAGE_DISCARD()=__afl_coverage_discard() -D __AFL_COVERAGE_SKIP()=__afl_coverage_skip() -D "__AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr)" -D "__AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len)" -D "__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)\"##SIG_AFL_PERSISTENT##\"; __attribute__((visibility(\"default\"))) int _L(unsigned int) __asm__(\"__afl_persistent_loop\"); _L(_A); })" -D "__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)\"##SIG_AFL_DEFER_FORKSRV##\"; __attribute__((visibility(\"default\"))) void _I(void) __asm__(\"__afl_manual_init\"); _I(); } while (0)" -internal-isystem /usr/lib/llvm-13/lib/clang/13.0.1/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O1 -Wno-unused-command-line-argument -Wno-unused-command-line-argument -fdebug-compilation-dir=/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fsanitize=address -fsanitize-system-ignorelist=/usr/lib/llvm-13/lib/clang/13.0.1/share/asan_ignorelist.txt -fsanitize-address-use-after-scope -fno-assume-sane-operator-new -funroll-loops -fgnuc-version=4.2.1 -flegacy-pass-manager -load /usr/bin/../lib/afl/SanitizerCoveragePCGUARD.so -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_66675.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c
+clang -cc1 version 13.0.1 based upon LLVM 13.0.1 default target x86_64-pc-linux-gnu
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/llvm-13/lib/clang/13.0.1/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+Linking C executable cmTC_66675
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_66675.dir/link.txt --verbose=1
+/usr/bin/afl-clang-fast -fsanitize=address -g -O1  -fsanitize=address -v CMakeFiles/cmTC_66675.dir/CMakeCCompilerABI.c.o -o cmTC_66675 
+Ubuntu clang version 13.0.1-2ubuntu2.2
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/lib/llvm-13/bin
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11
+Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/usr/bin/ld" --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_66675 /lib/x86_64-linux-gnu/crt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-13/bin/../lib -L/lib -L/usr/lib --whole-archive /usr/lib/llvm-13/lib/clang/13.0.1/lib/linux/libclang_rt.asan-x86_64.a --no-whole-archive --dynamic-list=/usr/lib/llvm-13/lib/clang/13.0.1/lib/linux/libclang_rt.asan-x86_64.a.syms CMakeFiles/cmTC_66675.dir/CMakeCCompilerABI.c.o /usr/bin/../lib/afl/afl-compiler-rt.o --dynamic-list=/usr/bin/../lib/afl/dynamic_list.txt --no-as-needed -lpthread -lrt -lm -ldl -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/11/crtend.o /lib/x86_64-linux-gnu/crtn.o
+gmake[1]: Leaving directory '/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/lib/llvm-13/lib/clang/13.0.1/include]
+    add: [/usr/local/include]
+    add: [/usr/include/x86_64-linux-gnu]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/usr/lib/llvm-13/lib/clang/13.0.1/include] ==> [/usr/lib/llvm-13/lib/clang/13.0.1/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/usr/lib/llvm-13/lib/clang/13.0.1/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_66675/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_66675.dir/build.make CMakeFiles/cmTC_66675.dir/build]
+  ignore line: [gmake[1]: Entering directory '/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_66675.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/afl-clang-fast   -fsanitize=address -g -O1    -v -MD -MT CMakeFiles/cmTC_66675.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_66675.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_66675.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c]
+  ignore line: [Ubuntu clang version 13.0.1-2ubuntu2.2]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /usr/lib/llvm-13/bin]
+  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11]
+  ignore line: [Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11]
+  ignore line: [Candidate multilib: .]
+  ignore line: [@m64]
+  ignore line: [Selected multilib: .]
+  ignore line: [@m64]
+  ignore line: [ (in-process)]
+  ignore line: [ "/usr/lib/llvm-13/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model static -mframe-pointer=none -fmath-errno -fno-rounding-math -mconstructor-aliases -munwind-tables -target-cpu x86-64 -tune-cpu generic -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -v -fcoverage-compilation-dir=/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp -resource-dir /usr/lib/llvm-13/lib/clang/13.0.1 -dependency-file CMakeFiles/cmTC_66675.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_66675.dir/CMakeCCompilerABI.c.o -sys-header-deps -D __AFL_HAVE_MANUAL_CONTROL=1 -D __AFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1 -D "__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1]
+  ignore line: [extern unsigned int *__afl_fuzz_len]
+  ignore line: [extern unsigned char *__afl_fuzz_ptr]
+  ignore line: [unsigned char __afl_fuzz_alt[1048576]]
+  ignore line: [unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt]
+  ignore line: [" -D "__AFL_COVERAGE()=int __afl_selective_coverage = 1]
+  ignore line: [void __afl_coverage_discard()]
+  ignore line: [void __afl_coverage_skip()]
+  ignore line: [void __afl_coverage_on()]
+  ignore line: [void __afl_coverage_off()]
+  ignore line: [" -D "__AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1]
+  ignore line: [" -D __AFL_COVERAGE_ON()=__afl_coverage_on() -D __AFL_COVERAGE_OFF()=__afl_coverage_off() -D __AFL_COVERAGE_DISCARD()=__afl_coverage_discard() -D __AFL_COVERAGE_SKIP()=__afl_coverage_skip() -D "__AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr)" -D "__AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0  __afl_fuzz_alt_ptr  1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len)" -D "__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used))]
+  ignore line: [  _B = (char*)\"##SIG_AFL_PERSISTENT##\"]
+  ignore line: [ __attribute__((visibility(\"default\"))) int _L(unsigned int) __asm__(\"__afl_persistent_loop\")]
+  ignore line: [ _L(_A)]
+  ignore line: [ })" -D "__AFL_INIT()=do { static volatile char *_A __attribute__((used))]
+  ignore line: [  _A = (char*)\"##SIG_AFL_DEFER_FORKSRV##\"]
+  ignore line: [ __attribute__((visibility(\"default\"))) void _I(void) __asm__(\"__afl_manual_init\")]
+  ignore line: [ _I()]
+  ignore line: [ } while (0)" -internal-isystem /usr/lib/llvm-13/lib/clang/13.0.1/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O1 -Wno-unused-command-line-argument -Wno-unused-command-line-argument -fdebug-compilation-dir=/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fsanitize=address -fsanitize-system-ignorelist=/usr/lib/llvm-13/lib/clang/13.0.1/share/asan_ignorelist.txt -fsanitize-address-use-after-scope -fno-assume-sane-operator-new -funroll-loops -fgnuc-version=4.2.1 -flegacy-pass-manager -load /usr/bin/../lib/afl/SanitizerCoveragePCGUARD.so -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_66675.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c]
+  ignore line: [clang -cc1 version 13.0.1 based upon LLVM 13.0.1 default target x86_64-pc-linux-gnu]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"]
+  ignore line: [ignoring nonexistent directory "/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/lib/llvm-13/lib/clang/13.0.1/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/include/x86_64-linux-gnu]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [Linking C executable cmTC_66675]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_66675.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/afl-clang-fast -fsanitize=address -g -O1  -fsanitize=address -v CMakeFiles/cmTC_66675.dir/CMakeCCompilerABI.c.o -o cmTC_66675 ]
+  ignore line: [Ubuntu clang version 13.0.1-2ubuntu2.2]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /usr/lib/llvm-13/bin]
+  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11]
+  ignore line: [Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11]
+  ignore line: [Candidate multilib: .]
+  ignore line: [@m64]
+  ignore line: [Selected multilib: .]
+  ignore line: [@m64]
+  link line: [ "/usr/bin/ld" --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_66675 /lib/x86_64-linux-gnu/crt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-13/bin/../lib -L/lib -L/usr/lib --whole-archive /usr/lib/llvm-13/lib/clang/13.0.1/lib/linux/libclang_rt.asan-x86_64.a --no-whole-archive --dynamic-list=/usr/lib/llvm-13/lib/clang/13.0.1/lib/linux/libclang_rt.asan-x86_64.a.syms CMakeFiles/cmTC_66675.dir/CMakeCCompilerABI.c.o /usr/bin/../lib/afl/afl-compiler-rt.o --dynamic-list=/usr/bin/../lib/afl/dynamic_list.txt --no-as-needed -lpthread -lrt -lm -ldl -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/11/crtend.o /lib/x86_64-linux-gnu/crtn.o]
+    arg [/usr/bin/ld] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_66675] ==> ignore
+    arg [/lib/x86_64-linux-gnu/crt1.o] ==> obj [/lib/x86_64-linux-gnu/crt1.o]
+    arg [/lib/x86_64-linux-gnu/crti.o] ==> obj [/lib/x86_64-linux-gnu/crti.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/11] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib64]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/lib/llvm-13/bin/../lib] ==> dir [/usr/lib/llvm-13/bin/../lib]
+    arg [-L/lib] ==> dir [/lib]
+    arg [-L/usr/lib] ==> dir [/usr/lib]
+    arg [--whole-archive] ==> ignore
+    arg [/usr/lib/llvm-13/lib/clang/13.0.1/lib/linux/libclang_rt.asan-x86_64.a] ==> lib [/usr/lib/llvm-13/lib/clang/13.0.1/lib/linux/libclang_rt.asan-x86_64.a]
+    arg [--no-whole-archive] ==> ignore
+    arg [--dynamic-list=/usr/lib/llvm-13/lib/clang/13.0.1/lib/linux/libclang_rt.asan-x86_64.a.syms] ==> ignore
+    arg [CMakeFiles/cmTC_66675.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [/usr/bin/../lib/afl/afl-compiler-rt.o] ==> obj [/usr/bin/../lib/afl/afl-compiler-rt.o]
+    arg [--dynamic-list=/usr/bin/../lib/afl/dynamic_list.txt] ==> ignore
+    arg [--no-as-needed] ==> ignore
+    arg [-lpthread] ==> lib [pthread]
+    arg [-lrt] ==> lib [rt]
+    arg [-lm] ==> lib [m]
+    arg [-ldl] ==> lib [dl]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/11/crtend.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/crtend.o]
+    arg [/lib/x86_64-linux-gnu/crtn.o] ==> obj [/lib/x86_64-linux-gnu/crtn.o]
+  remove lib [/usr/lib/llvm-13/lib/clang/13.0.1/lib/linux/libclang_rt.asan-x86_64.a]
+  collapse obj [/usr/bin/../lib/afl/afl-compiler-rt.o] ==> [/usr/lib/afl/afl-compiler-rt.o]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/11] ==> [/usr/lib/gcc/x86_64-linux-gnu/11]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib64] ==> [/usr/lib64]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/lib/llvm-13/bin/../lib] ==> [/usr/lib/llvm-13/lib]
+  collapse library dir [/lib] ==> [/lib]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
+  implicit libs: [pthread;rt;m;dl;gcc;gcc_s;c;gcc;gcc_s]
+  implicit objs: [/lib/x86_64-linux-gnu/crt1.o;/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o;/usr/lib/afl/afl-compiler-rt.o;/usr/lib/gcc/x86_64-linux-gnu/11/crtend.o;/lib/x86_64-linux-gnu/crtn.o]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/11;/usr/lib64;/lib/x86_64-linux-gnu;/lib64;/usr/lib/x86_64-linux-gnu;/usr/lib/llvm-13/lib;/lib;/usr/lib]
+  implicit fwks: []
+
+
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: /root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_efcbe/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_efcbe.dir/build.make CMakeFiles/cmTC_efcbe.dir/build
+gmake[1]: Entering directory '/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_efcbe.dir/CheckIncludeFile.c.o
+/usr/bin/afl-clang-fast   -fsanitize=address -g -O1  -MD -MT CMakeFiles/cmTC_efcbe.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_efcbe.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_efcbe.dir/CheckIncludeFile.c.o -c /root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_efcbe
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_efcbe.dir/link.txt --verbose=1
+/usr/bin/afl-clang-fast -fsanitize=address -g -O1  -fsanitize=address  CMakeFiles/cmTC_efcbe.dir/CheckIncludeFile.c.o -o cmTC_efcbe 
+gmake[1]: Leaving directory '/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: /root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_18bf5/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_18bf5.dir/build.make CMakeFiles/cmTC_18bf5.dir/build
+gmake[1]: Entering directory '/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_18bf5.dir/CheckIncludeFile.c.o
+/usr/bin/afl-clang-fast   -fsanitize=address -g -O1  -MD -MT CMakeFiles/cmTC_18bf5.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_18bf5.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_18bf5.dir/CheckIncludeFile.c.o -c /root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_18bf5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_18bf5.dir/link.txt --verbose=1
+/usr/bin/afl-clang-fast -fsanitize=address -g -O1  -fsanitize=address  CMakeFiles/cmTC_18bf5.dir/CheckIncludeFile.c.o -o cmTC_18bf5 
+gmake[1]: Leaving directory '/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: /root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_43204/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_43204.dir/build.make CMakeFiles/cmTC_43204.dir/build
+gmake[1]: Entering directory '/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_43204.dir/CheckIncludeFile.c.o
+/usr/bin/afl-clang-fast   -fsanitize=address -g -O1  -MD -MT CMakeFiles/cmTC_43204.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_43204.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_43204.dir/CheckIncludeFile.c.o -c /root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_43204
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_43204.dir/link.txt --verbose=1
+/usr/bin/afl-clang-fast -fsanitize=address -g -O1  -fsanitize=address  CMakeFiles/cmTC_43204.dir/CheckIncludeFile.c.o -o cmTC_43204 
+gmake[1]: Leaving directory '/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining size of size_t passed with the following output:
+Change Dir: /root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_3ed1d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_3ed1d.dir/build.make CMakeFiles/cmTC_3ed1d.dir/build
+gmake[1]: Entering directory '/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3ed1d.dir/SIZE_T.c.o
+/usr/bin/afl-clang-fast   -fsanitize=address -g -O1  -MD -MT CMakeFiles/cmTC_3ed1d.dir/SIZE_T.c.o -MF CMakeFiles/cmTC_3ed1d.dir/SIZE_T.c.o.d -o CMakeFiles/cmTC_3ed1d.dir/SIZE_T.c.o -c /root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CheckTypeSize/SIZE_T.c
+Linking C executable cmTC_3ed1d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3ed1d.dir/link.txt --verbose=1
+/usr/bin/afl-clang-fast -fsanitize=address -g -O1  -fsanitize=address  CMakeFiles/cmTC_3ed1d.dir/SIZE_T.c.o -o cmTC_3ed1d 
+gmake[1]: Leaving directory '/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining size of unsigned long passed with the following output:
+Change Dir: /root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_e315d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_e315d.dir/build.make CMakeFiles/cmTC_e315d.dir/build
+gmake[1]: Entering directory '/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e315d.dir/UNSIGNED_LONG.c.o
+/usr/bin/afl-clang-fast   -fsanitize=address -g -O1  -MD -MT CMakeFiles/cmTC_e315d.dir/UNSIGNED_LONG.c.o -MF CMakeFiles/cmTC_e315d.dir/UNSIGNED_LONG.c.o.d -o CMakeFiles/cmTC_e315d.dir/UNSIGNED_LONG.c.o -c /root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CheckTypeSize/UNSIGNED_LONG.c
+Linking C executable cmTC_e315d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e315d.dir/link.txt --verbose=1
+/usr/bin/afl-clang-fast -fsanitize=address -g -O1  -fsanitize=address  CMakeFiles/cmTC_e315d.dir/UNSIGNED_LONG.c.o -o cmTC_e315d 
+gmake[1]: Leaving directory '/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test HAVE_BUILTIN_CTZL succeeded with the following output:
+Change Dir: /root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_df02a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_df02a.dir/build.make CMakeFiles/cmTC_df02a.dir/build
+gmake[1]: Entering directory '/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_df02a.dir/src.c.o
+/usr/bin/afl-clang-fast -DHAVE_BUILTIN_CTZL  -fsanitize=address -g -O1  -MD -MT CMakeFiles/cmTC_df02a.dir/src.c.o -MF CMakeFiles/cmTC_df02a.dir/src.c.o.d -o CMakeFiles/cmTC_df02a.dir/src.c.o -c /root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_df02a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_df02a.dir/link.txt --verbose=1
+/usr/bin/afl-clang-fast -fsanitize=address -g -O1  -fsanitize=address  CMakeFiles/cmTC_df02a.dir/src.c.o -o cmTC_df02a 
+gmake[1]: Leaving directory '/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(int argc, char **argv) { unsigned long a = argc;  return __builtin_ctzl(a); }
+Performing C SOURCE FILE Test HIDDEN_WORKS succeeded with the following output:
+Change Dir: /root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_131cb/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_131cb.dir/build.make CMakeFiles/cmTC_131cb.dir/build
+gmake[1]: Entering directory '/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_131cb.dir/src.c.o
+/usr/bin/afl-clang-fast -DHIDDEN_WORKS  -fsanitize=address -g -O1  -MD -MT CMakeFiles/cmTC_131cb.dir/src.c.o -MF CMakeFiles/cmTC_131cb.dir/src.c.o.d -o CMakeFiles/cmTC_131cb.dir/src.c.o -c /root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_131cb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_131cb.dir/link.txt --verbose=1
+/usr/bin/afl-clang-fast -fsanitize=address -g -O1  -fsanitize=address  CMakeFiles/cmTC_131cb.dir/src.c.o -o cmTC_131cb 
+gmake[1]: Leaving directory '/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+extern const int table[1]; const int __attribute__((visibility("hidden"))) table[1] = { 0 }; int main(void) { return table[0]; }
+Performing C SOURCE FILE Test INLINE_WORKS succeeded with the following output:
+Change Dir: /root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_cd53c/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_cd53c.dir/build.make CMakeFiles/cmTC_cd53c.dir/build
+gmake[1]: Entering directory '/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cd53c.dir/src.c.o
+/usr/bin/afl-clang-fast -DINLINE_WORKS  -fsanitize=address -g -O1  -MD -MT CMakeFiles/cmTC_cd53c.dir/src.c.o -MF CMakeFiles/cmTC_cd53c.dir/src.c.o.d -o CMakeFiles/cmTC_cd53c.dir/src.c.o -c /root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_cd53c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cd53c.dir/link.txt --verbose=1
+/usr/bin/afl-clang-fast -fsanitize=address -g -O1  -fsanitize=address  CMakeFiles/cmTC_cd53c.dir/src.c.o -o cmTC_cd53c 
+gmake[1]: Leaving directory '/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+__inline__ __attribute__((always_inline)) static int foo(void) { return 0; } int main(void) { return foo(); }
+Performing C SOURCE FILE Test HAVE_THREAD_LOCAL succeeded with the following output:
+Change Dir: /root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_5e771/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_5e771.dir/build.make CMakeFiles/cmTC_5e771.dir/build
+gmake[1]: Entering directory '/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5e771.dir/src.c.o
+/usr/bin/afl-clang-fast -DHAVE_THREAD_LOCAL  -fsanitize=address -g -O1  -MD -MT CMakeFiles/cmTC_5e771.dir/src.c.o -MF CMakeFiles/cmTC_5e771.dir/src.c.o.d -o CMakeFiles/cmTC_5e771.dir/src.c.o -c /root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_5e771
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5e771.dir/link.txt --verbose=1
+/usr/bin/afl-clang-fast -fsanitize=address -g -O1  -fsanitize=address  CMakeFiles/cmTC_5e771.dir/src.c.o -o cmTC_5e771 
+gmake[1]: Leaving directory '/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+static __thread int i;  int main(void) { i = 0;  return i; }
+Performing C SOURCE FILE Test HAVE_VERSION_SCRIPT succeeded with the following output:
+Change Dir: /root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_4fb78/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_4fb78.dir/build.make CMakeFiles/cmTC_4fb78.dir/build
+gmake[1]: Entering directory '/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4fb78.dir/src.c.o
+/usr/bin/afl-clang-fast -DHAVE_VERSION_SCRIPT  -fsanitize=address -g -O1 -Wl,--version-script,/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/conftest.map -MD -MT CMakeFiles/cmTC_4fb78.dir/src.c.o -MF CMakeFiles/cmTC_4fb78.dir/src.c.o.d -o CMakeFiles/cmTC_4fb78.dir/src.c.o -c /root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_4fb78
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4fb78.dir/link.txt --verbose=1
+/usr/bin/afl-clang-fast -fsanitize=address -g -O1 -Wl,--version-script,/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/conftest.map -fsanitize=address  CMakeFiles/cmTC_4fb78.dir/src.c.o -o cmTC_4fb78 
+gmake[1]: Leaving directory '/root/dataset_fuzz/libjpeg-turbo-3.1.0/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }

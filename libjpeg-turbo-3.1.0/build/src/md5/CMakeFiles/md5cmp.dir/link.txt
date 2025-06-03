@@ -1,0 +1,1 @@
+/usr/bin/afl-clang-fast -fsanitize=address -g -O1 -O3 -DNDEBUG -fsanitize=address CMakeFiles/md5cmp.dir/md5cmp.c.o CMakeFiles/md5cmp.dir/md5.c.o CMakeFiles/md5cmp.dir/md5hl.c.o -o ../../test/md5cmp 

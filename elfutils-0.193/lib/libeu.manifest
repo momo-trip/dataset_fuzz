@@ -1,0 +1,1 @@
+xasprintf.o xstrdup.o xstrndup.o xmalloc.o next_prime.o crc32.o crc32_file.o eu-search.o color.o error.o printversion.o

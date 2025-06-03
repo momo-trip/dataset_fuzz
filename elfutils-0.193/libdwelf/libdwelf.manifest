@@ -1,0 +1,1 @@
+dwelf_elf_gnu_debuglink.o dwelf_dwarf_gnu_debugaltlink.o dwelf_elf_gnu_build_id.o dwelf_scn_gnu_compressed_size.o dwelf_strtab.o dwelf_elf_begin.o dwelf_elf_e_machine_string.o

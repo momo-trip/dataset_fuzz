@@ -1,0 +1,1 @@
+/usr/bin/afl-clang-fast -fsanitize=address -g -O1 -O3 -DNDEBUG -fsanitize=address CMakeFiles/tjdecomp.dir/src/tjdecomp.c.o -o tjdecomp  -Wl,-rpath,/root/dataset_fuzz/libjpeg-turbo-3.1.0/build libturbojpeg.so.0.4.0 

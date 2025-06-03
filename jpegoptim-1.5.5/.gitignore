@@ -1,0 +1,12 @@
+Makefile
+config.h
+config.status
+config.log
+jpegoptim
+jpegoptim.prn
+jpegoptim.ps
+jpegoptim.txt
+*.o
+*.jpg
+build/
+autom4te.cache/

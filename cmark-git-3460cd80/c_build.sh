@@ -1,0 +1,19 @@
+#!/bin/bash
+
+rm -rf build
+
+export AFL_USE_ASAN=1
+
+export CC=afl-clang-fast
+export CXX=afl-clang-fast++
+
+export CFLAGS="-fsanitize=address -g -O1"
+export CXXFLAGS="-fsanitize=address -g -O1"
+export LDFLAGS="-fsanitize=address"
+
+#export CC=afl-gcc-fast
+
+mkdir build
+cd build
+cmake ..
+make 

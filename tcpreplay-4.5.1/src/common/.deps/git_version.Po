@@ -1,0 +1,5 @@
+git_version.o: \
+  /usr/lib/llvm-13/lib/clang/13.0.1/share/asan_ignorelist.txt \
+  git_version.c
+
+/usr/lib/llvm-13/lib/clang/13.0.1/share/asan_ignorelist.txt:

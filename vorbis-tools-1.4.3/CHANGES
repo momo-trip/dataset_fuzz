@@ -1,0 +1,140 @@
+vorbis-tools 1.4.3 -- 2025-04-13
+ * Made sure utf8_decode() prototype is found by newer GCC.
+ * Plugged memleak when using vorbiscomment -c (#2328)
+ * Plugged memory leak in vorbiscomment param parsing.
+ * Added simple self test check.
+ * Updated ogg123 http transport to avoid depricated
+   CURLOPT_PROGRESSFUNCTION.
+ * Code cleanup and avoiding some reserved names breaking MSVC build.
+ * Introduced new configure option --enable-gcc-sanitazion for more
+   checks.
+ * Updated translation files and added initial Norwegian Bokmål
+   translation.
+ * Changed oggenc to no longer assume output path ends in a file name
+   (CVE-2023-43361).
+ * Adjusted build rules to avoi link error on MacOSX.
+ * Dropped version number from documenation install path.
+ * Adjusted ogg123 to handle disappearing audio device more
+   gracefully.
+ * Fetched all updated translations from GNU translation project.
+
+vorbis-tools 1.4.2 -- 2021-01-21
+ * Cleanup of the build system
+ * Code cleanup
+ * Removed outdated debian/, and vorbis-tools.spec
+ * Updated po/ to reflect new code positions
+ * ogg123, ogginfo: Added support to decode METADATA_BLOCK_PICTURE
+ * ogginfo: Added support for decoding Skeleton
+
+vorbis-tools 1.4.1 -- Unreleased (2020-12-21)
+
+ * Updated documentation including manpages (including: #1679, Debian bug: #359948)
+ * Cleanup of the build system
+ * Code cleanup
+ * Fixed invalid handling of input data (#2007)
+ * Fixed build with MSVC.
+ * Added gitlab-ci configuration
+ * oggenc, oggdec: Fixed memory leak
+ * oggenc, ogg123: Always link libm
+ * oggenc: Fixed RIFF/WAVE 6.1 channel mapping (#1749)
+ * oggenc: Fixed --ignorelength (#1803)
+ * oggenc: Fixed crash on raw input (#2009)
+ * oggenc: Reject files with invalid sample rates (#2078)
+ * oggenc: Fixed crash when encoding from stdin
+ * oggenc: Fixed floating point error (Debian bug: #328266, #634855)
+ * oggenc: Fixed large alloca on bad AIFF input (#2212, Debian bug: #797461, CVE: CVE-2015-6749)
+ * oggenc: Validate count of channels in the header (#2136, #2137, Debian bug: #776086, CVE: CVE-2014-9638, CVE-2014-9639)
+ * oggdec: Fixed write of version to not corrupt data (Debian bug: #595104)
+ * oggdec: Fixed crash on stream errors (#2148, Debian bug: #772978, Ubuntu bug: #629135)
+ * oggdec: Use translations (#2149, Debian bug: #772976)
+ * oggdec: Fixed output to stdout (Do not write "-.wav" files) (#1678, Debian bug: 263762)
+ * ogg123: Fixed format string error
+ * ogg123: Fixed playback of stereo speex tracks with no intensity signal (#1676)
+ * ogg123: Fixed locking/synchronization error
+ * ogg123: Fixed freeze on interupt at EOF (#1956, Debian bug: #307325)
+ * ogg123: Fixed wrong display of status lines (#1677, Debian bug: #239073)
+ * ogg123: Fixed Speex playback, correctly initialize channel matrix (Debian bug: #772766)
+ * ogg123: Added support for Opus files
+ * ogginfo: Corrected reported duration for Theora streams
+ * ogginfo: Added support for Opus, FLAC, and speex
+ * vcut: Corrected code to match language specification (#1701)
+ * vcut: Corrected memory access (#2264, Debian bug: #818037)
+ * vorbiscomment: Added -d/--rm to allow removal of tags
+ * vorbiscomment: Fixed handling of short files
+
+vorbis-tools 1.4.0 -- 2010-03-25
+
+ * Implement corrected channel mappings for all input and playback file types
+ * Correct an possible infinite loop in WAV input reading code when header is corrupt
+ * Implement disable_coupling option for oggenc
+ * Fix Ctrl-C lockup bug in ogg123
+ * ogg123 playback in sorted order
+ * Add WAVEFORMATEXTENSIBLE support
+ * More translations
+ * Add '-' as stdin/out filename in vcut
+ * Add -lnetwork check for socket in configure
+ * Remove 'extra' F parameter from ogg123 remote output
+
+vorbis-tools 1.3.0 -- Unreleased
+
+ * Fixed an error in configure.ac; --with-speex/flac work again (#1319)
+ * Corrected problems in the Visual Studio project files
+ * Updated po files from the Translation Project
+ * Added new en_GB.po, eo.po, pl.po, sk.po and vi.po translation files
+ * Added AC_USE_SYSTEM_EXTENSIONS to configure.ac; no more configure warnings
+ * Corrected SUBLANG values in intl/localename.c (#1415)
+ * Change -v to -V on oggenc and oggdec for consistency (#1112)
+ * Fix for utf8_decode in Windows; improves behavior in vorbiscomment (#268)
+ * Updated gettextize to version 0.17
+ * ogg123: backported fix from libfishsound to patch the Speex decoder (#1347)
+ * ogg123: fixed CPU issue when outputting to a closed pipe (#1357)
+ * ogg123: return value to stop decoding after buffer is shut down (#1357)
+ * ogg123: support for ReplayGain; requires libvorbis 1.2.1 or later (#381)
+ * ogg123: unset non-blocking mode on stderr
+ * oggdec: gettextized help text (#1385)
+ * oggdec: gettextized all strings
+ * oggdec: call ov_open_callbacks instead of ov_open; it works on Windows now
+ * oggenc: fixed a core dump while resampling from FLAC (#1316)
+ * oggenc: fixed a typo in the Skeleton handling routine
+ * oggenc: fixed remapping channels bug (#1326)
+ * oggenc: support for WAVE_FORMAT_EXTENSIBLE headers (#1326)
+ * oggenc: support for 32 bit Wave files (#1326)
+ * oggenc: --ignorelength; support for Wave files > 4 GB (#1326)
+ * oggenc: split help text into manageable chunks to help translators (#1385)
+ * oggenc: --utf8 command similar to vorbiscomment's --raw (#268)
+ * oggenc: fixed the encoding of extended characters in Windows (#268)
+ * oggenc: validate raw UTF-8 sent to oggenc (#268)
+ * oggenc: include the PID in the RNG seed to get a unique serial (#1432)
+ * oggenc: lyrics support using .lrc as source; requires libkate (#1403)
+ * ogginfo: support for information in Kate streams (#1360)
+ * vcut: 64 bit fixes (#1366)
+ * vcut: support for chained streams (#1455)
+ * vorbiscomment: correct memory allocation (#472)
+ * vorbiscomment: validate raw UTF-8 sent to vorbiscomment (#268)
+ * vorbiscomment: fix segfault when using --tag (#1439)
+ * vorbiscomment: round-trip multi-line comments (#273)
+
+vorbis-tools 1.2.0 -- 2008-02-21
+
+ * FLAC support now relies solely on libFLAC
+ * Support for large files (#879)
+ * Fixed acinclude.m4 to properly support --no switches
+ * ogg123: added remote control support (#1109)
+ * ogg123: fixed a bug in esd when pressing CTRL + C (#715)
+ * ogg123: fixed a type mismatch in option parsing for 64 bit systems
+ * ogg123: configuration no longer hardcoded to /etc
+ * ogg123: compiles with older versions of libcurl
+ * ogg123: fixed crash when playing 1-channel FLAC (#535)
+ * ogg123: fixed floating-point exception when playing corrupt FLAC (#1119)
+ * oggdec: limited support for chained Ogg bitstreams
+ * oggdec: support decoding of multiple files into a single one
+ * oggenc: -k, switch for Skeleton bitstream encoding
+ * oggenc: fixed issues with Skeleton on big endian systems
+ * oggenc: proper 5.1 channel mapping support
+ * oggenc: FLAC module does not confuse every Ogg file as its own
+ * oggenc: compiles with older versions of libvorbis
+ * ogginfo: recognizes Skeleton, Dirac, FLAC and Kate bitstreams
+ * vcut: solved issues described in ticket #1313
+ * vorbiscomment: support for creation of long comments
+ * vorbiscomment: support for multiplexed Vorbis
+ * Several minor bug fixes
