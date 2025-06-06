@@ -215,7 +215,7 @@ AUTOCONF = ${SHELL} '/root/dataset_fuzz/tcpreplay-4.5.1/config/missing' autoconf
 AUTOGEN = 
 AUTOHEADER = ${SHELL} '/root/dataset_fuzz/tcpreplay-4.5.1/config/missing' autoheader
 AUTOMAKE = ${SHELL} '/root/dataset_fuzz/tcpreplay-4.5.1/config/missing' automake-1.16
-AWK = mawk
+AWK = gawk
 CC = afl-clang-fast
 CCDEPMODE = depmode=gcc3
 CFLAGS = -D_U_="__attribute__((unused))" -fsanitize=address -g -O1  -Wno-variadic-macros -Wfatal-errors  -I/usr/include

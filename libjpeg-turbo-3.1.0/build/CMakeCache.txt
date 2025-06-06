@@ -14,8 +14,8 @@
 # EXTERNAL cache entries
 ########################
 
-//Build string (default: 20250601)
-BUILD:STRING=20250601
+//Build string (default: 20250605)
+BUILD:STRING=20250605
 
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line

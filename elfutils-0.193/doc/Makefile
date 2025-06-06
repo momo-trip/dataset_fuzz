@@ -173,18 +173,18 @@ AUTOCONF = ${SHELL} '/root/dataset_fuzz/elfutils-0.193/config/missing' autoconf
 AUTOHEADER = ${SHELL} '/root/dataset_fuzz/elfutils-0.193/config/missing' autoheader
 AUTOMAKE = ${SHELL} '/root/dataset_fuzz/elfutils-0.193/config/missing' automake-1.17
 AWK = gawk
-BZ2_LIB = 
-CC = gcc
+BZ2_LIB = -lbz2 
+CC = afl-clang-fast
 CCDEPMODE = depmode=gcc3
-CC_BIARCH = gcc -m32
-CFLAGS = -D_FORTIFY_SOURCE=2 -g -O2
-CPP = gcc -E
+CC_BIARCH = afl-clang-fast -m32
+CFLAGS = -D_FORTIFY_SOURCE=3 -fsanitize=address -g -O1 -fno-omit-frame-pointer -fno-addrsig
+CPP = afl-clang-fast -E
 CPPFLAGS = 
 CSCOPE = cscope
 CTAGS = ctags
-CXX = g++ -std=c++11
+CXX = afl-clang-fast++ -std=c++11
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -D_FORTIFY_SOURCE=2 -g -O2
+CXXFLAGS = -D_FORTIFY_SOURCE=3 -fsanitize=address -g -O1 -fno-omit-frame-pointer
 CYGPATH_W = echo
 DEBUGINFOD_IMA_CERT_PATH = 
 DEBUGINFOD_URLS = 
@@ -216,17 +216,17 @@ INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 INTLLIBS = 
 INTL_MACOSX_LIBS = 
 LCOV = 
-LDFLAGS = 
+LDFLAGS = -fsanitize=address
 LEX = flex
 LEXLIB = 
 LEX_OUTPUT_ROOT = lex.yy
 LIBDEBUGINFOD_SONAME = libdebuginfod.so.1
 LIBICONV = -liconv
 LIBINTL = 
-LIBLZMA = 
+LIBLZMA = liblzma
 LIBOBJS = 
-LIBS = 
-LIBZSTD = 
+LIBS = -lbz2 
+LIBZSTD = libzstd
 LTLIBICONV = -liconv
 LTLIBINTL = 
 LTLIBOBJS = 
@@ -265,14 +265,14 @@ XGETTEXT_EXTRA_OPTIONS =
 YACC = bison -y
 YFLAGS = 
 ZSTD_COMPRESS_CFLAGS = 
-ZSTD_COMPRESS_LIBS = 
+ZSTD_COMPRESS_LIBS = -lzstd
 abs_builddir = /root/dataset_fuzz/elfutils-0.193/doc
 abs_srcdir = /root/dataset_fuzz/elfutils-0.193/doc
 abs_top_builddir = /root/dataset_fuzz/elfutils-0.193
 abs_top_srcdir = /root/dataset_fuzz/elfutils-0.193
 ac_ct_AR = ar
-ac_ct_CC = gcc
-ac_ct_CXX = g++
+ac_ct_CC = afl-clang-fast
+ac_ct_CXX = 
 am__include = include
 am__leading_dot = .
 am__quote = 
@@ -322,7 +322,7 @@ localedir = ${datarootdir}/locale
 localedir_c = "/usr/local/share/locale"
 localedir_c_make = \"$(localedir)\"
 localstatedir = ${prefix}/var
-lzma_LIBS = 
+lzma_LIBS = -llzma 
 mandir = ${datarootdir}/man
 mkdir_p = $(MKDIR_P)
 obstack_LIBS = 
@@ -345,8 +345,8 @@ target_alias =
 top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ..
-zip_LIBS =  
-zstd_LIBS =  
+zip_LIBS = -lzstd -llzma  -lbz2 
+zstd_LIBS = -lzstd -llzma  -lbz2 
 EXTRA_DIST = COPYING-GFDL README
 
 # Section 1, Executable programs or shell commands

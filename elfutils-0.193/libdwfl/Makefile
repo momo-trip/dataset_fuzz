@@ -92,9 +92,9 @@ POST_UNINSTALL = :
 build_triplet = x86_64-pc-linux-gnu
 host_triplet = x86_64-pc-linux-gnu
 am__append_1 = -DSYMBOL_VERSIONING
-#am__append_2 = bzip2.c
-#am__append_3 = lzma.c
-#am__append_4 = zstd.c
+am__append_2 = bzip2.c
+am__append_3 = lzma.c
+am__append_4 = zstd.c
 subdir = libdwfl
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/ax_cxx_compile_stdcxx.m4 \
@@ -144,9 +144,9 @@ am__libdwfl_a_SOURCES_DIST = dwfl_begin.c dwfl_end.c dwfl_error.c \
 	image-header.c dwfl_frame.c frame_unwind.c dwfl_frame_pc.c \
 	linux-pid-attach.c linux-core-attach.c dwfl_frame_regs.c \
 	gzip.c debuginfod-client.c bzip2.c lzma.c zstd.c
-#am__objects_1 = bzip2.$(OBJEXT)
-#am__objects_2 = lzma.$(OBJEXT)
-#am__objects_3 = zstd.$(OBJEXT)
+am__objects_1 = bzip2.$(OBJEXT)
+am__objects_2 = lzma.$(OBJEXT)
+am__objects_3 = zstd.$(OBJEXT)
 am_libdwfl_a_OBJECTS = dwfl_begin.$(OBJEXT) dwfl_end.$(OBJEXT) \
 	dwfl_error.$(OBJEXT) dwfl_version.$(OBJEXT) \
 	dwfl_module.$(OBJEXT) dwfl_report_elf.$(OBJEXT) \
@@ -326,18 +326,18 @@ AUTOCONF = ${SHELL} '/root/dataset_fuzz/elfutils-0.193/config/missing' autoconf
 AUTOHEADER = ${SHELL} '/root/dataset_fuzz/elfutils-0.193/config/missing' autoheader
 AUTOMAKE = ${SHELL} '/root/dataset_fuzz/elfutils-0.193/config/missing' automake-1.17
 AWK = gawk
-BZ2_LIB = 
-CC = gcc
+BZ2_LIB = -lbz2 
+CC = afl-clang-fast
 CCDEPMODE = depmode=gcc3
-CC_BIARCH = gcc -m32
-CFLAGS = -D_FORTIFY_SOURCE=2 -g -O2
-CPP = gcc -E
+CC_BIARCH = afl-clang-fast -m32
+CFLAGS = -D_FORTIFY_SOURCE=3 -fsanitize=address -g -O1 -fno-omit-frame-pointer -fno-addrsig
+CPP = afl-clang-fast -E
 CPPFLAGS = 
 CSCOPE = cscope
 CTAGS = ctags
-CXX = g++ -std=c++11
+CXX = afl-clang-fast++ -std=c++11
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -D_FORTIFY_SOURCE=2 -g -O2
+CXXFLAGS = -D_FORTIFY_SOURCE=3 -fsanitize=address -g -O1 -fno-omit-frame-pointer
 CYGPATH_W = echo
 DEBUGINFOD_IMA_CERT_PATH = 
 DEBUGINFOD_URLS = 
@@ -369,17 +369,17 @@ INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 INTLLIBS = 
 INTL_MACOSX_LIBS = 
 LCOV = 
-LDFLAGS = 
+LDFLAGS = -fsanitize=address
 LEX = flex
 LEXLIB = 
 LEX_OUTPUT_ROOT = lex.yy
 LIBDEBUGINFOD_SONAME = libdebuginfod.so.1
 LIBICONV = -liconv
 LIBINTL = 
-LIBLZMA = 
+LIBLZMA = liblzma
 LIBOBJS = 
-LIBS = 
-LIBZSTD = 
+LIBS = -lbz2 
+LIBZSTD = libzstd
 LTLIBICONV = -liconv
 LTLIBINTL = 
 LTLIBOBJS = 
@@ -418,14 +418,14 @@ XGETTEXT_EXTRA_OPTIONS =
 YACC = bison -y
 YFLAGS = 
 ZSTD_COMPRESS_CFLAGS = 
-ZSTD_COMPRESS_LIBS = 
+ZSTD_COMPRESS_LIBS = -lzstd
 abs_builddir = /root/dataset_fuzz/elfutils-0.193/libdwfl
 abs_srcdir = /root/dataset_fuzz/elfutils-0.193/libdwfl
 abs_top_builddir = /root/dataset_fuzz/elfutils-0.193
 abs_top_srcdir = /root/dataset_fuzz/elfutils-0.193
 ac_ct_AR = ar
-ac_ct_CC = gcc
-ac_ct_CXX = g++
+ac_ct_CC = afl-clang-fast
+ac_ct_CXX = 
 am__include = include
 am__leading_dot = .
 am__quote = 
@@ -475,7 +475,7 @@ localedir = ${datarootdir}/locale
 localedir_c = "/usr/local/share/locale"
 localedir_c_make = \"$(localedir)\"
 localstatedir = ${prefix}/var
-lzma_LIBS = 
+lzma_LIBS = -llzma 
 mandir = ${datarootdir}/man
 mkdir_p = $(MKDIR_P)
 obstack_LIBS = 
@@ -498,8 +498,8 @@ target_alias =
 top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ..
-zip_LIBS =  
-zstd_LIBS =  
+zip_LIBS = -lzstd -llzma  -lbz2 
+zstd_LIBS = -lzstd -llzma  -lbz2 
 AM_CPPFLAGS = -iquote . -I$(srcdir) -I$(top_srcdir)/lib -I.. \
 	-I$(srcdir) -I$(srcdir)/../libelf -I$(srcdir)/../libebl \
 	-I$(srcdir)/../libdw -I$(srcdir)/../libdwelf \
@@ -508,28 +508,28 @@ AM_CPPFLAGS = -iquote . -I$(srcdir) -I$(top_srcdir)/lib -I.. \
 # Drop the 'u' flag that automake adds by default. It is incompatible
 # with deterministic archives.
 ARFLAGS = cr
-#STACK_USAGE_WARNING = 
+STACK_USAGE_WARNING = 
 
 # Warn about stack usage of more than 256K = 262144 bytes.
-STACK_USAGE_WARNING = -Wstack-usage=262144
-#STACK_USAGE_NO_ERROR = 
-STACK_USAGE_NO_ERROR = -Wno-error=stack-usage=
-#LOGICAL_OP_WARNING = 
-LOGICAL_OP_WARNING = -Wlogical-op
-#DUPLICATED_COND_WARNING = 
-DUPLICATED_COND_WARNING = -Wduplicated-cond
+#STACK_USAGE_WARNING = -Wstack-usage=262144
+STACK_USAGE_NO_ERROR = 
+#STACK_USAGE_NO_ERROR = -Wno-error=stack-usage=
+LOGICAL_OP_WARNING = 
+#LOGICAL_OP_WARNING = -Wlogical-op
+DUPLICATED_COND_WARNING = 
+#DUPLICATED_COND_WARNING = -Wduplicated-cond
 #NULL_DEREFERENCE_WARNING = 
 NULL_DEREFERENCE_WARNING = -Wnull-dereference
-#IMPLICIT_FALLTHROUGH_WARNING = -Wimplicit-fallthrough
+IMPLICIT_FALLTHROUGH_WARNING = -Wimplicit-fallthrough
 
 # Use strict fallthrough. Only __attribute__((fallthrough)) will prevent the
 # warning
-IMPLICIT_FALLTHROUGH_WARNING = -Wimplicit-fallthrough=5
+#IMPLICIT_FALLTHROUGH_WARNING = -Wimplicit-fallthrough=5
 #IMPLICIT_FALLTHROUGH_WARNING = 
-#TRAMPOLINES_WARNING = 
-TRAMPOLINES_WARNING = -Wtrampolines
-#NO_PACKED_NOT_ALIGNED_WARNING = 
-NO_PACKED_NOT_ALIGNED_WARNING = -Wno-packed-not-aligned
+TRAMPOLINES_WARNING = 
+#TRAMPOLINES_WARNING = -Wtrampolines
+NO_PACKED_NOT_ALIGNED_WARNING = 
+#NO_PACKED_NOT_ALIGNED_WARNING = -Wno-packed-not-aligned
 USE_AFTER_FREE3_WARNING = 
 #USE_AFTER_FREE3_WARNING = -Wuse-after-free=3
 AM_CFLAGS = -Wall -Wshadow -Wformat=2 \

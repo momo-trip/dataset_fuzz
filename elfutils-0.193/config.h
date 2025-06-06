@@ -75,7 +75,7 @@
 #define HAVE_FALLTHROUGH 1
 
 /* Defined if __attribute__((gcc_struct)) is supported */
-#define HAVE_GCC_STRUCT 1
+/* #undef HAVE_GCC_STRUCT */
 
 /* Define to 1 if you have the 'getrlimit' function. */
 #define HAVE_GETRLIMIT 1
@@ -196,7 +196,7 @@
 #define STRERROR_R_CHAR_P 1
 
 /* Support bzip2 decompression via -lbz2. */
-/* #undef USE_BZLIB */
+#define USE_BZLIB 1
 
 /* Defined if demangling is enabled */
 #define USE_DEMANGLE 1
@@ -205,16 +205,16 @@
 /* #undef USE_LOCKS */
 
 /* Support LZMA (xz) decompression via -llzma. */
-/* #undef USE_LZMA */
+#define USE_LZMA 1
 
 /* Support gzip decompression via -lz. */
 #define USE_ZLIB 1
 
 /* Support ZSTD (zst) decompression via -lzstd. */
-/* #undef USE_ZSTD */
+#define USE_ZSTD 1
 
 /* zstd compression support */
-/* #undef USE_ZSTD_COMPRESS */
+#define USE_ZSTD_COMPRESS 1
 
 /* Version number of package */
 #define VERSION "0.193"

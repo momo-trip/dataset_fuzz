@@ -26,5 +26,5 @@ mkdir -p $TMPDIR/RPMS
 ln -fs `pwd` $TMPDIR/BUILD
 rpmbuild -bb --define "_blddir $TMPDIR/buildroot" --define "_topdir $TMPDIR" \
 	--target x86_64 pkgscripts/rpm.spec; \
-cp $TMPDIR/RPMS/x86_64/libjpeg-turbo-3.1.0-20250601.x86_64.rpm \
+cp $TMPDIR/RPMS/x86_64/libjpeg-turbo-3.1.0-20250605.x86_64.rpm \
 	libjpeg-turbo-3.1.0.x86_64.rpm
